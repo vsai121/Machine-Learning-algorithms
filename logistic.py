@@ -60,7 +60,7 @@ def computeCost(theta , X , y , lamda=0):
     
     regterm = (lamda/2) * np.sum(np.dot(theta[1:].T,theta[1:]))   
     
-    cost = float( (-1./m) * ( np.sum(term1 + term2) + regterm ) )
+    cost = float( (-1./m) * ( np.sum(term1 + term2) ) + float(lamda/(2*m))*regterm ) )
 
     return cost
     
